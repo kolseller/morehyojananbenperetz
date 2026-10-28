@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Libros de Moreh Yojanan ben Peretz | BibliaUY</title>
+<meta name="description" content="Sefer Kódesh, Biblia digital desde el Hebreo al Español y libros de estudio bíblico de Moreh Yojanan ben Peretz.">
+<meta name="theme-color" content="#10233f">
+<style>
+:root{--navy:#10233f;--navy2:#18385c;--gold:#c7a45a;--ivory:#faf7ef;--ink:#1e293b;--muted:#5c6675;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--ivory);line-height:1.6}
+a{color:inherit}
+.site-header{background:var(--navy);color:white;border-bottom:3px solid var(--gold)}
+.nav{max-width:1200px;margin:auto;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:18px}
+.brand{font-family:Georgia,'Times New Roman',serif;font-size:1.1rem;font-weight:700;letter-spacing:.03em}
+.nav-links{display:flex;gap:20px;flex-wrap:wrap;align-items:center}
+.nav-links a{text-decoration:none;color:#fff;font-size:.94rem}
+.nav-links a:hover{color:#f0d89f}
+.hero{background:linear-gradient(130deg,var(--navy),var(--navy2));color:#fff;padding:66px 22px 72px}
+.hero-inner{max-width:1120px;margin:auto;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(240px,.85fr);gap:48px;align-items:center}
+.kicker{display:inline-block;color:#f0d89f;font-size:.82rem;text-transform:uppercase;letter-spacing:.16em;font-weight:700;margin-bottom:14px}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif;line-height:1.18}
+h1{font-size:clamp(2.2rem,5vw,4rem);margin:0 0 18px}
+.hero p{font-size:1.08rem;color:#e7edf5;max-width:650px}
+.author{margin:22px 0;color:#f0d89f;font-weight:700}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.button{display:inline-flex;justify-content:center;align-items:center;text-align:center;text-decoration:none;border-radius:9px;padding:13px 20px;background:var(--gold);color:#182337;font-weight:800;border:1px solid var(--gold);transition:transform .18s ease,background .18s ease}
+.button:hover{transform:translateY(-2px);background:#e0c37e}
+.button.outline{background:transparent;color:#fff;border-color:#d9c28b}
+.button.small{font-size:.88rem;padding:11px 13px;width:100%;margin-top:auto}
+.hero-art{display:flex;align-items:center;justify-content:center;min-height:290px}
+.hero-art img{max-width:100%;width:min(370px,100%);max-height:400px;object-fit:contain;border-radius:14px;box-shadow:0 18px 45px #0005}
+.book-symbol{width:220px;height:280px;border:2px solid var(--gold);border-radius:7px 16px 16px 7px;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;color:#f0d89f;background:linear-gradient(145deg,#1a3a60,#0b1b30);box-shadow:12px 12px 0 #081526;font-family:Georgia,serif;font-size:1.5rem}
+.section{padding:58px 22px}
+.section-inner{max-width:1200px;margin:auto}
+.section-head{text-align:center;max-width:780px;margin:0 auto 34px}
+.section-head h2{font-size:clamp(1.8rem,3.5vw,2.7rem);color:var(--navy);margin:0 0 12px}
+.section-head p{color:var(--muted);margin:0}
+.featured{background:#fff;border:1px solid #e6dcc7;border-top:4px solid var(--gold);border-radius:18px;padding:28px;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;box-shadow:0 12px 35px #13233d0c}
+.featured h2{font-size:clamp(1.65rem,3vw,2.35rem);margin:0 0 14px;color:var(--navy)}
+.price{font-size:1.15rem;color:var(--navy);font-weight:800;margin:16px 0}
+.bonus-list{padding-left:21px;margin:16px 0;color:var(--muted)}
+.featured-art{display:flex;justify-content:center;align-items:center;min-height:200px;background:var(--ivory);border-radius:12px;padding:18px}
+.featured-art img{max-width:100%;max-height:280px;object-fit:contain}
+.catalog{background:#f0ece2}
+.book-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.book-card{background:#fff;border:1px solid #e5dfd2;border-radius:13px;overflow:hidden;display:flex;flex-direction:column;min-width:0;box-shadow:0 6px 18px #10233f0c}
+.cover{height:270px;background:#f7f5f0;padding:16px;display:flex;align-items:center;justify-content:center;text-decoration:none}
+.cover img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.cover-fallback:after{content:'Libro de estudio';font-family:Georgia,serif;color:var(--navy);font-weight:700}
+.book-info{padding:17px;display:flex;flex-direction:column;align-items:stretch;gap:10px;flex:1}
+.book-info h3{font-size:1.08rem;color:var(--navy);margin:0}
+.book-info p{font-size:.9rem;color:var(--muted);margin:0 0 8px}
+.note{font-size:.82rem;text-align:center;color:var(--muted);margin:28px 0 0}
+footer{background:#0a182b;color:#dbe3ed;padding:30px 22px;text-align:center}
+footer strong{color:#f0d89f}
+@media(max-width:1000px){.book-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.nav{align-items:flex-start;flex-direction:column;padding:16px}.nav-links{gap:12px}.hero{padding:44px 18px 52px}.hero-inner{grid-template-columns:1fr;gap:28px}.hero-art{min-height:180px;order:-1}.hero-art img{max-height:280px;width:auto}.featured{grid-template-columns:1fr;padding:20px}.featured-art{order:-1}.book-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.cover{height:230px;padding:10px}.book-info{padding:13px}.book-info h3{font-size:1rem}.book-info p{font-size:.86rem}}
+@media(max-width:430px){.book-grid{grid-template-columns:1fr}.book-card{display:grid;grid-template-columns:112px minmax(0,1fr)}.cover{height:100%;min-height:180px;padding:8px}.book-info{padding:13px}.button{width:100%}.actions{flex-direction:column}.nav-links{font-size:.9rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="site-header"><nav class="nav" aria-label="Navegación principal"><div class="brand">MOREH YOJANAN BEN PERETZ</div><div class="nav-links"><a href="#inicio">Inicio</a><a href="#sefer-kodesh">Sefer Kódesh</a><a href="#libros">Catálogo de libros</a><a href="https://www.bibliauy.com/p/libros-moreh-yojanan-ben-peretz.html" target="_blank" rel="noopener noreferrer">BibliaUY</a></div></nav></header>
+<main>
+<section class="hero" id="inicio"><div class="hero-inner"><div><span class="kicker">Biblioteca de estudio bíblico</span><h1>Las Escrituras desde el Hebreo</h1><p>Libros y herramientas de estudio de Moreh Yojanan ben Peretz para acercarse al texto bíblico desde su contexto hebreo, con atención al idioma, las raíces y la comprensión de las Escrituras.</p><div class="author">Por Moreh Yojanan ben Peretz</div><div class="actions"><a class="button" href="#sefer-kodesh">Conocer Sefer Kódesh</a><a class="button outline" href="#libros">Explorar los libros</a></div></div><div class="hero-art"><img src="https://pics.paypal.com/00/p/MTI5MWIwZWYtMmIyOS00ZjAzLWEzMzUtMzEzZWQ5OWVlOTA0/image_3.PNG" alt="Imagen de presentación del libro" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<div class='book-symbol'>Sefer<br>Kódesh</div>')"></div></div></section>
+<section class="section" id="sefer-kodesh"><div class="section-inner"><div class="section-head"><span class="kicker" style="color:#8a6a2f">Obra destacada</span><h2>Biblia digital desde el Hebreo al Español — Sefer Kódesh</h2><p>Un recurso digital para consultar y estudiar las Escrituras con una perspectiva hebrea.</p></div><article class="featured"><div><h2>Sefer Kódesh Digital</h2><p>Accedé a la Biblia digital y explorá los materiales de apoyo creados para acompañar el estudio.</p><ul class="bonus-list"><li>Glosario Mesiánico de Referencia</li><li>Guía de Pronunciación y Significado</li><li>Mapa de Conexiones Proféticas: Yeshua en cada mandamiento de la Torá</li></ul><p class="price">Edición digital · US$12</p><div class="actions"><a class="button" href="https://biblia-five-orpin.vercel.app/" target="_blank" rel="noopener noreferrer">Abrir Sefer Kódesh Digital</a><a class="button outline" style="color:#10233f;border-color:#10233f" href="https://www.bibliauy.com/p/libros-moreh-yojanan-ben-peretz.html" target="_blank" rel="noopener noreferrer">Ver biblioteca completa</a></div></div><div class="featured-art"><div class="book-symbol">בְּרֵאשִׁית<br><br>SEFER KÓDESH<br><small style="font-size:.65em">Hebreo · Español</small></div></div></article></div></section>
+<section class="section catalog" id="libros"><div class="section-inner"><div class="section-head"><span class="kicker" style="color:#8a6a2f">Biblioteca del autor</span><h2>Libros de Moreh Yojanan ben Peretz</h2><p>Explorá las publicaciones disponibles. Cada botón abre la ficha correspondiente en Amazon.</p></div><div class="book-grid"><article class="book-card">
+  <a class="cover" href="https://www.amazon.com/dp/B00FM1HUUU" target="_blank" rel="noopener noreferrer"><img src="https://images-na.ssl-images-amazon.com/images/I/51eBPoNwl1L.jpg" alt="Portada de Biblia del hebreo al español (Brit Hadasha nº 2)" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('cover-fallback')"></a>
+  <div class="book-info"><h3>Biblia del hebreo al español (Brit Hadasha nº 2)</h3><p>Sefer Kódesh, volumen 2: Brit Hadashá. Una edición orientada a recuperar la perspectiva hebrea de las Escrituras, con nombres restaurados, fuentes hebreas y arameas y herramientas para acercarse al texto bíblico desde su contexto original.</p><a class="button small" href="https://www.amazon.com/dp/B00FM1HUUU" target="_blank" rel="noopener noreferrer">Ver libro en Amazon</a></div>
+</article>
+<article class="book-card">
+  <a class="cover" href="https://www.amazon.com/dp/B01C8UBH92" target="_blank" rel="noopener noreferrer"><img src="https://images-na.ssl-images-amazon.com/images/I/510UslnHLvL.jpg" alt="Portada de EL Verdadero Evangelio" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('cover-fallback')"></a>
+  <div class="book-info"><h3>EL Verdadero Evangelio</h3><p>Una obra dedicada a quienes buscan en las Escrituras comprender el verdadero Evangelio. Presenta la Besorá Továh HaGueuláh desde una perspectiva hebrea y mesiánica.</p><a class="button small" href="https://www.amazon.com/dp/B01C8UBH92" target="_blank" rel="noopener noreferrer">Ver libro en Amazon</a></div>
+</article>
+<article class="book-card">
+  <a class="cover" href="https://www.amazon.com/dp/B00OV585RU" target="_blank" rel="noopener noreferrer"><img src="https://images-na.ssl-images-amazon.com/images/I/51DtKnabAxL.jpg" alt="Portada de Diccionario Hebreo-Español con fonética" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('cover-fallback')"></a>
+  <div class="book-info"><h3>Diccionario Hebreo-Español con fonética</h3><p>Diccionario de consulta hebreo-español con fonética, pensado como herramienta práctica para estudiar palabras y expresiones hebreas y acercarse a su significado.</p><a class="button small" href="https://www.amazon.com/dp/B00OV585RU" target="_blank" rel="noopener noreferrer">Ver libro en Amazon</a></div>
+</article>
+<article class="book-card">
+  <a class="cover" href="https://www.amazon.com/dp/B015WZJIDM" target="_blank" rel="noopener noreferrer"><img src="https://images-na.ssl-images-amazon.com/images/I/51kt7N+Cl8L.jpg" alt="Portada de Torah para leer en Hebreo Con Fonetica Español: Herramienta Profetica" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('cover-fallback')"></a>
+  <div class="book-info"><h3>Torah para leer en Hebreo Con Fonetica Español: Herramienta Profetica</h3><p>Herramienta para leer los cinco libros de Moshe en hebreo, con apoyo de fonética en español. La edición está pensada para tablet, Kindle, celular, iPod y otros dispositivos.</p><a class="button small" href="https://www.amazon.com/dp/B015WZJIDM" target="_blank" rel="noopener noreferrer">Ver libro en Amazon</a></div>
+</article>
+<article class="book-card">
+  <a class="cover" href="https://www.amazon.com/dp/B00P4FUUJM" target="_blank" rel="noopener noreferrer"><img src="https://images-na.ssl-images-amazon.com/images/I/61mLdnHosJL.jpg" alt="Portada de Biblia Para leer en hebreo: Para Entender Mejor las Escrituras" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('cover-fallback')"></a>
+  <div class="book-info"><h3>Biblia Para leer en hebreo: Para Entender Mejor las Escrituras</h3><p>Torá interlineal español-hebreo-fonética, con apoyo para estudiar letras, vocales, pronunciación y significado. Incluye materiales en paleohebreo y escritura hebrea, parashot y herramientas para comprender las raíces de las palabras.</p><a class="button small" href="https://www.amazon.com/dp/B00P4FUUJM" target="_blank" rel="noopener noreferrer">Ver libro en Amazon</a></div>
+</article>
+<article class="book-card">
+  <a class="cover" href="https://www.amazon.com/dp/B00P5QOGDQ" target="_blank" rel="noopener noreferrer"><img src="https://images-na.ssl-images-amazon.com/images/I/617tLyVKrdL.jpg" alt="Portada de Shemot-Exodo Vol 2: Para entender mejor las escrituras" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('cover-fallback')"></a>
+  <div class="book-info"><h3>Shemot-Exodo Vol 2: Para entender mejor las escrituras</h3><p>Volumen dedicado a Shemot/Éxodo dentro de la colección Para Entender Mejor las Escrituras, para profundizar en el texto desde una perspectiva hebrea.</p><a class="button small" href="https://www.amazon.com/dp/B00P5QOGDQ" target="_blank" rel="noopener noreferrer">Ver libro en Amazon</a></div>
+</article>
+<article class="book-card">
+  <a class="cover" href="https://www.amazon.com/dp/B0GC3GYW2D" target="_blank" rel="noopener noreferrer"><img src="https://images-na.ssl-images-amazon.com/images/I/51FPwjDmmlL.jpg" alt="Portada de El Rapto: La Gran Invencion Moderna" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('cover-fallback')"></a>
+  <div class="book-info"><h3>El Rapto: La Gran Invencion Moderna</h3><p>Estudio dedicado al concepto del rapto y a su desarrollo como doctrina moderna, presentado desde una lectura crítica de las Escrituras.</p><a class="button small" href="https://www.amazon.com/dp/B0GC3GYW2D" target="_blank" rel="noopener noreferrer">Ver libro en Amazon</a></div>
+</article>
+<article class="book-card">
+  <a class="cover" href="https://www.amazon.com/dp/B0H4F2YKRC" target="_blank" rel="noopener noreferrer"><img src="https://images-na.ssl-images-amazon.com/images/I/51ZiKehCd-L.jpg" alt="Portada de Parashá Koraj (קורח)" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('cover-fallback')"></a>
+  <div class="book-info"><h3>Parashá Koraj (קורח)</h3><p>Estudio de la Parashá Koraj (קורח), abordando sus temas y enseñanzas desde la perspectiva de la Torá.</p><a class="button small" href="https://www.amazon.com/dp/B0H4F2YKRC" target="_blank" rel="noopener noreferrer">Ver libro en Amazon</a></div>
+</article>
+<article class="book-card">
+  <a class="cover" href="https://www.amazon.com/dp/B0G8QN68RT" target="_blank" rel="noopener noreferrer"><img src="https://images-na.ssl-images-amazon.com/images/I/41mYT8PikfL.jpg" alt="Portada de Nassó – Elevar para asumir: Orden, familia, consagración y bendición desde la Toráh" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('cover-fallback')"></a>
+  <div class="book-info"><h3>Nassó – Elevar para asumir: Orden, familia, consagración y bendición desde la Toráh</h3><p>Estudio de Nassó sobre orden, familia, consagración y bendición desde la Toráh. Incluye temas como Beit Av, Mishpajá, Nazir y Birkat Kohanim, junto con herramientas de interpretación hebrea.</p><a class="button small" href="https://www.amazon.com/dp/B0G8QN68RT" target="_blank" rel="noopener noreferrer">Ver libro en Amazon</a></div>
+</article>
+<article class="book-card">
+  <a class="cover" href="https://www.amazon.com/dp/B09JNDKZXP" target="_blank" rel="noopener noreferrer"><img src="https://images-na.ssl-images-amazon.com/images/I/51uP6y8WmnL.jpg" alt="Portada de Parasha Ekev: El Secreto Biblico de La Higuera" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('cover-fallback')"></a>
+  <div class="book-info"><h3>Parasha Ekev: El Secreto Biblico de La Higuera</h3><p>Estudio de la Parashá Ekev y del simbolismo bíblico de la higuera, buscando conexiones y significados desde la lectura hebrea de las Escrituras.</p><a class="button small" href="https://www.amazon.com/dp/B09JNDKZXP" target="_blank" rel="noopener noreferrer">Ver libro en Amazon</a></div>
+</article>
+<article class="book-card">
+  <a class="cover" href="https://www.amazon.com/dp/B01C6MLO4U" target="_blank" rel="noopener noreferrer"><img src="https://images-na.ssl-images-amazon.com/images/I/51lJob5yy8L.jpg" alt="Portada de Parasha Balak." loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('cover-fallback')"></a>
+  <div class="book-info"><h3>Parasha Balak.</h3><p>Estudio de la Parashá Balak, centrado en el relato, sus enseñanzas y sus conexiones dentro de la lectura de la Torá.</p><a class="button small" href="https://www.amazon.com/dp/B01C6MLO4U" target="_blank" rel="noopener noreferrer">Ver libro en Amazon</a></div>
+</article>
+<article class="book-card">
+  <a class="cover" href="https://www.amazon.com/dp/B0124ERHS2" target="_blank" rel="noopener noreferrer"><img src="https://images-na.ssl-images-amazon.com/images/I/51fForz4SVL.jpg" alt="Portada de TEOLOGIA rabbinico Noe E &#x27;biblico?" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('cover-fallback')"></a>
+  <div class="book-info"><h3>TEOLOGIA rabbinico Noe E &#x27;biblico?</h3><p>Estudio en italiano sobre teología rabínica, Noé y la cuestión de su fundamento bíblico. Examina interpretaciones y conceptos relacionados con el judaísmo rabínico y la lectura de las Escrituras.</p><a class="button small" href="https://www.amazon.com/dp/B0124ERHS2" target="_blank" rel="noopener noreferrer">Ver libro en Amazon</a></div>
+</article>
+<article class="book-card">
+  <a class="cover" href="https://www.amazon.com/dp/B011Z4B40O" target="_blank" rel="noopener noreferrer"><img src="https://images-na.ssl-images-amazon.com/images/I/51sjxY+Pz3L.jpg" alt="Portada de Noahide rabbinic theology is biblical ??" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('cover-fallback')"></a>
+  <div class="book-info"><h3>Noahide rabbinic theology is biblical ??</h3><p>Estudio en inglés que examina la relación entre la teología noájida/rabínica y el texto bíblico, incluyendo cuestiones de interpretación y tradición.</p><a class="button small" href="https://www.amazon.com/dp/B011Z4B40O" target="_blank" rel="noopener noreferrer">Ver libro en Amazon</a></div>
+</article>
+<article class="book-card">
+  <a class="cover" href="https://www.amazon.com/dp/B00RY4M346" target="_blank" rel="noopener noreferrer"><img src="https://images-na.ssl-images-amazon.com/images/I/51hzkwSeHkL.jpg" alt="Portada de Los Dias de Elias Que son???: Conceptos Fundamentales" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('cover-fallback')"></a>
+  <div class="book-info"><h3>Los Dias de Elias Que son???: Conceptos Fundamentales</h3><p>Reflexiones y conceptos fundamentales relacionados con los días de Eliyahu/Elías y su significado dentro de la lectura profética de las Escrituras.</p><a class="button small" href="https://www.amazon.com/dp/B00RY4M346" target="_blank" rel="noopener noreferrer">Ver libro en Amazon</a></div>
+</article>
+<article class="book-card">
+  <a class="cover" href="https://www.amazon.com/dp/B00R29RGUO" target="_blank" rel="noopener noreferrer"><img src="https://images-na.ssl-images-amazon.com/images/I/51U7vzxIaaL.jpg" alt="Portada de Mis Pensamientos Biblicos en Facebook 2014: Reflexiones" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('cover-fallback')"></a>
+  <div class="book-info"><h3>Mis Pensamientos Biblicos en Facebook 2014: Reflexiones</h3><p>Recopilación de reflexiones bíblicas publicadas en Facebook durante 2014, reunidas en formato de libro.</p><a class="button small" href="https://www.amazon.com/dp/B00R29RGUO" target="_blank" rel="noopener noreferrer">Ver libro en Amazon</a></div>
+</article>
+<article class="book-card">
+  <a class="cover" href="https://www.amazon.com/dp/B00P6ITAN4" target="_blank" rel="noopener noreferrer"><img src="https://images-na.ssl-images-amazon.com/images/I/612z7dXjYAL.jpg" alt="Portada de Devarim-deut-Vol 5: Para Entender Mejor las Escrituras" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('cover-fallback')"></a>
+  <div class="book-info"><h3>Devarim-deut-Vol 5: Para Entender Mejor las Escrituras</h3><p>Volumen dedicado a Devarim/Deuteronomio dentro de la colección Para Entender Mejor las Escrituras.</p><a class="button small" href="https://www.amazon.com/dp/B00P6ITAN4" target="_blank" rel="noopener noreferrer">Ver libro en Amazon</a></div>
+</article>
+<article class="book-card">
+  <a class="cover" href="https://www.amazon.com/dp/B00P6ITAKW" target="_blank" rel="noopener noreferrer"><img src="https://images-na.ssl-images-amazon.com/images/I/61MnDUD+z8L.jpg" alt="Portada de Wayikra-Lev-Vol 3: Para entender mejor las escrituras" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('cover-fallback')"></a>
+  <div class="book-info"><h3>Wayikra-Lev-Vol 3: Para entender mejor las escrituras</h3><p>Volumen dedicado a Wayikrá/Levítico dentro de la colección Para Entender Mejor las Escrituras.</p><a class="button small" href="https://www.amazon.com/dp/B00P6ITAKW" target="_blank" rel="noopener noreferrer">Ver libro en Amazon</a></div>
+</article>
+<article class="book-card">
+  <a class="cover" href="https://www.amazon.com/dp/B00P6ITAKM" target="_blank" rel="noopener noreferrer"><img src="https://images-na.ssl-images-amazon.com/images/I/61dZuy8oCnL.jpg" alt="Portada de Bamidbar-Numeros Vol 4: Para Entender Mejor las escrituras" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('cover-fallback')"></a>
+  <div class="book-info"><h3>Bamidbar-Numeros Vol 4: Para Entender Mejor las escrituras</h3><p>Volumen dedicado a Bamidbar/Números dentro de la colección Para Entender Mejor las Escrituras.</p><a class="button small" href="https://www.amazon.com/dp/B00P6ITAKM" target="_blank" rel="noopener noreferrer">Ver libro en Amazon</a></div>
+</article>
+<article class="book-card">
+  <a class="cover" href="https://www.amazon.com/dp/B00OWTJ09C" target="_blank" rel="noopener noreferrer"><img src="https://images-na.ssl-images-amazon.com/images/I/41ZiJIr+50L.jpg" alt="Portada de Estudios Biblicos Profundos: Perspectiva Hebrea 1er siglo" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('cover-fallback')"></a>
+  <div class="book-info"><h3>Estudios Biblicos Profundos: Perspectiva Hebrea 1er siglo</h3><p>Estudios bíblicos profundos planteados desde la perspectiva hebrea del primer siglo, para explorar las Escrituras teniendo en cuenta su contexto hebreo.</p><a class="button small" href="https://www.amazon.com/dp/B00OWTJ09C" target="_blank" rel="noopener noreferrer">Ver libro en Amazon</a></div>
+</article>
+<article class="book-card">
+  <a class="cover" href="https://www.amazon.com/dp/1508561168" target="_blank" rel="noopener noreferrer"><img src="https://images-na.ssl-images-amazon.com/images/I/41mve6snjML.jpg" alt="Portada de Galatas: Entendiendo en Hebreo" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('cover-fallback')"></a>
+  <div class="book-info"><h3>Galatas: Entendiendo en Hebreo</h3><p>Estudio de Gálatas desde una perspectiva hebrea y de primer siglo. Examina las cartas de Shaúl, el concepto de galut/exilio y cuestiones relacionadas con la ley y las costumbres de Israel.</p><a class="button small" href="https://www.amazon.com/dp/1508561168" target="_blank" rel="noopener noreferrer">Ver libro en Amazon</a></div>
+</article></div><p class="note">Catálogo preparado a partir del archivo de biblioteca anterior. La disponibilidad, los formatos y los precios de los libros de Amazon pueden variar.</p></div></section>
+</main>
+<footer><p><strong>Moreh Yojanan ben Peretz</strong></p><p>Estudio de las Escrituras desde el Hebreo · BibliaUY</p><p><a href="https://www.bibliauy.com/" style="color:#f0d89f">www.bibliauy.com</a></p></footer>
+</body></html>
