@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="es-UY">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TV Streaming Uruguay | Probá Gratis</title>
+  <meta name="description" content="TV por Internet y opciones de streaming en Uruguay. Consultá disponibilidad y probá el servicio sin compromiso por WhatsApp.">
+  <meta name="theme-color" content="#050711">
+  <meta property="og:title" content="TV Streaming Uruguay | Probá Gratis">
+  <meta property="og:description" content="TV por Internet y streaming en Uruguay. Consultá disponibilidad por WhatsApp.">
+  <meta property="og:type" content="website">
+  <style>
+    :root{
+      --bg:#050711;--bg2:#080d19;--panel:#0d1422;--panel2:#111a2d;
+      --text:#f7f9ff;--muted:#aab5c9;--muted2:#7e8aa1;--line:rgba(255,255,255,.10);
+      --blue:#58b1ff;--blue2:#8ad0ff;--violet:#9b7bff;--pink:#ff63b3;--green:#22db83;
+      --gold:#ffd166;--r:24px;--max:1200px
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;color:var(--text);background:
+      radial-gradient(circle at 10% 0%,rgba(88,177,255,.11),transparent 28%),
+      radial-gradient(circle at 90% 8%,rgba(155,123,255,.10),transparent 25%),
+      linear-gradient(180deg,var(--bg),var(--bg2) 55%,#060914);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.55;overflow-x:hidden
+    }
+    body:before{
+      content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.35;
+      background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+      background-size:42px 42px;mask-image:linear-gradient(to bottom,#000,transparent 75%)
+    }
+    a{text-decoration:none;color:inherit}
+    button{font:inherit}
+    img,svg{display:block;max-width:100%}
+    .wrap{max-width:var(--max);margin:auto;padding:0 22px}
+    .top{
+      position:sticky;top:0;z-index:80;background:rgba(5,7,17,.76);
+      backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line)
+    }
+    .nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{font-weight:950;letter-spacing:-.045em;font-size:18px;white-space:nowrap}
+    .brand span{color:var(--blue)}
+    .navlinks{display:flex;gap:24px;color:#cbd5e7;font-size:14px}
+    .navlinks a{transition:.2s}
+    .navlinks a:hover{color:#fff}
+    .navcta{padding:11px 17px;border-radius:999px;background:var(--green);color:#03140b;font-weight:950;font-size:13px;box-shadow:0 8px 25px rgba(34,219,131,.18)}
+    .hero{position:relative;padding:82px 0 56px;overflow:hidden}
+    .hero:before,.hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none;filter:blur(18px)}
+    .hero:before{width:500px;height:500px;left:-260px;top:-180px;background:radial-gradient(circle,rgba(88,177,255,.18),transparent 65%)}
+    .hero:after{width:600px;height:600px;right:-280px;top:-180px;background:radial-gradient(circle,rgba(155,123,255,.20),transparent 66%)}
+    .gridhero{display:grid;grid-template-columns:1.02fr .98fr;gap:46px;align-items:center}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;
+      border:1px solid rgba(88,177,255,.28);background:rgba(88,177,255,.07);color:#bae0ff;
+      font-size:12px;font-weight:900;letter-spacing:.05em
+    }
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 15px rgba(34,219,131,.85)}
+    h1{font-size:clamp(45px,6.4vw,82px);line-height:.95;letter-spacing:-.072em;margin:20px 0 24px;max-width:780px}
+    h1 em{font-style:normal;background:linear-gradient(90deg,#fff,#96d5ff 50%,#b39cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:19px;color:#b7c3d8;max-width:670px}
+    .lead strong{color:#fff}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin:29px 0 15px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 22px;border-radius:15px;font-weight:950;border:1px solid transparent;transition:.2s;cursor:pointer}
+    .btn:hover{transform:translateY(-2px)}
+    .primary{background:linear-gradient(135deg,#22db83,#52ea9f);color:#03140b;box-shadow:0 15px 36px rgba(34,219,131,.23)}
+    .secondary{background:rgba(255,255,255,.045);border-color:var(--line);color:#fff}
+    .micro{font-size:12px;color:#75839c}
+    .visual{position:relative;min-height:470px;display:grid;place-items:center}
+    .tv-shell{
+      width:min(100%,550px);aspect-ratio:16/10;padding:12px;border-radius:30px;
+      border:1px solid rgba(255,255,255,.14);background:linear-gradient(145deg,#1a2439,#080b14);
+      box-shadow:0 45px 110px rgba(0,0,0,.56),0 0 80px rgba(88,177,255,.12);
+      transform:perspective(1000px) rotateY(-7deg) rotateX(2deg)
+    }
+    .tv-screen{position:relative;width:100%;height:100%;overflow:hidden;border-radius:21px;background:#080d17}
+    .tv-screen svg{width:100%;height:100%}
+    .scanline{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 0%,rgba(255,255,255,.03) 50%,transparent 100%);background-size:100% 8px;mix-blend-mode:screen;pointer-events:none}
+    .play{
+      position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:74px;height:74px;border-radius:50%;
+      background:rgba(255,255,255,.94);display:grid;place-items:center;color:#111;box-shadow:0 0 55px rgba(255,255,255,.22)
+    }
+    .play:after{content:"";margin-left:5px;border-left:20px solid #111;border-top:13px solid transparent;border-bottom:13px solid transparent}
+    .screenlabel{
+      position:absolute;left:20px;bottom:17px;padding:7px 10px;border-radius:10px;background:rgba(2,5,12,.55);
+      border:1px solid rgba(255,255,255,.09);font-size:11px;font-weight:900;letter-spacing:.08em;color:#dfe9ff
+    }
+    .floatcard{
+      position:absolute;background:rgba(14,20,34,.88);border:1px solid var(--line);backdrop-filter:blur(14px);
+      border-radius:17px;padding:13px 15px;box-shadow:0 20px 52px rgba(0,0,0,.34);z-index:3
+    }
+    .float1{right:-2px;top:18px}.float2{left:-7px;bottom:20px}
+    .floatcard b{display:block;font-size:12px}.floatcard small{color:#92a0b8;font-size:11px}
+    .hero-badges{display:flex;gap:9px;flex-wrap:wrap;margin-top:21px}
+    .hero-badge{font-size:12px;color:#dbe8ff;border:1px solid var(--line);background:rgba(255,255,255,.035);padding:8px 10px;border-radius:12px}
+    .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.022)}
+    .trustrow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:17px 0}
+    .trustitem{text-align:center;color:#bfc9db;font-size:12px}
+    .trustitem strong{display:block;color:#fff;font-size:13px;margin-bottom:1px}
+    section{padding:84px 0}
+    .sectionhead{text-align:center;max-width:760px;margin:0 auto 40px}
+    .kicker{color:#79c1ff;text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:950}
+    .sectionhead h2{font-size:clamp(30px,4vw,51px);line-height:1.02;letter-spacing:-.052em;margin:10px 0 12px}
+    .sectionhead p{color:var(--muted);margin:0}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .card{
+      position:relative;overflow:hidden;padding:0;border-radius:25px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+      border:1px solid var(--line);min-height:345px;transition:.24s
+    }
+    .card:hover{transform:translateY(-5px);border-color:rgba(120,190,255,.26);box-shadow:0 22px 60px rgba(0,0,0,.25)}
+    .cardart{height:150px;overflow:hidden;background:#09101b}
+    .cardart svg{width:100%;height:100%;transition:.35s}
+    .card:hover .cardart svg{transform:scale(1.04)}
+    .cardbody{padding:22px}
+    .icon{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,rgba(88,177,255,.18),rgba(155,123,255,.18));display:grid;place-items:center;font-size:21px;margin-bottom:14px}
+    .card h3{margin:0 0 7px;font-size:18px}.card p{margin:0;color:#9faec5;font-size:13px}
+    .card a{display:inline-block;margin-top:17px;color:#a6d8ff;font-size:13px;font-weight:950}
+    .feature{
+      display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:stretch;padding:0;overflow:hidden;
+      border-radius:31px;border:1px solid var(--line);background:linear-gradient(145deg,#0d1526,#090e19)
+    }
+    .featureart{min-height:430px;position:relative;overflow:hidden;background:#09111e}.featureart svg{width:100%;height:100%}
+    .featurecopy{padding:42px 40px;display:flex;flex-direction:column;justify-content:center}
+    .featurecopy h3{font-size:clamp(28px,4vw,46px);line-height:1.02;letter-spacing:-.05em;margin:9px 0 12px}
+    .featurecopy p{color:var(--muted);max-width:530px}
+    .featurepoints{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:21px 0 25px}
+    .fp{padding:12px;border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:14px;color:#dfe8f8;font-size:12px}
+    .fp b{display:block;font-size:13px;margin-bottom:1px}
+    .platforms{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .platform{
+      padding:20px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(145deg,#0e1526,#0b101d);
+      text-align:left;position:relative;overflow:hidden
+    }
+    .platform:after{content:"";position:absolute;width:120px;height:120px;right:-55px;top:-50px;border-radius:50%;background:rgba(88,177,255,.07)}
+    .platformmark{font-size:24px;margin-bottom:13px}.platform b{display:block;font-size:15px}.platform span{display:block;margin-top:4px;color:#7e8ca4;font-size:12px}
+    .disclaimer{max-width:820px;margin:20px auto 0;text-align:center;color:#748198;font-size:11px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .step{padding:29px;border-radius:25px;background:linear-gradient(145deg,#0e1729,#090e1a);border:1px solid var(--line);position:relative;overflow:hidden}
+    .step:after{content:"";position:absolute;width:150px;height:150px;right:-75px;bottom:-80px;border-radius:50%;background:rgba(155,123,255,.07)}
+    .num{font-size:11px;color:#78bfff;font-weight:950;letter-spacing:.12em}
+    .step h3{margin:10px 0 8px}.step p{color:var(--muted);margin:0}
+    .test{
+      position:relative;overflow:hidden;text-align:center;padding:60px 28px;border-radius:34px;
+      background:
+        radial-gradient(circle at 20% 20%,rgba(88,177,255,.18),transparent 28%),
+        radial-gradient(circle at 80% 20%,rgba(155,123,255,.18),transparent 28%),
+        linear-gradient(135deg,#101b31,#0b1222);
+      border:1px solid rgba(120,190,255,.16)
+    }
+    .test h2{font-size:clamp(31px,4vw,53px);letter-spacing:-.055em;line-height:1.0;margin:0 0 12px}
+    .test p{color:#aebbd0;max-width:680px;margin:0 auto 25px}
+    .device-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .device{border:1px solid var(--line);border-radius:20px;background:#0c1321;padding:22px;text-align:center}
+    .device svg{height:74px;width:100%;margin:0 auto 12px}.device b{font-size:14px}.device small{display:block;color:#79869d;margin-top:3px}
+    .paygrid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    .pay{padding:22px 12px;text-align:center;background:#0d1422;border:1px solid var(--line);border-radius:18px;font-weight:950}
+    .pay small{display:block;color:#77859e;font-weight:500;margin-top:4px}
+    .faq{max-width:860px;margin:auto}.faq details{border-bottom:1px solid var(--line)}
+    .faq summary{list-style:none;cursor:pointer;padding:21px 0;font-weight:850;display:flex;justify-content:space-between;gap:20px}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary:after{content:"+";color:#79c1ff;font-size:22px}.faq details[open] summary:after{content:"−"}
+    .faq p{color:#98a6bd;padding:0 35px 22px 0;margin:0}
+    .final{padding:22px 0 88px}
+    .finalbox{padding:55px 30px;text-align:center;border-radius:31px;background:linear-gradient(145deg,#121d32,#0c1220);border:1px solid var(--line)}
+    .finalbox h2{font-size:clamp(30px,4vw,50px);letter-spacing:-.05em;line-height:1.0;margin:0 0 11px}.finalbox p{color:var(--muted);max-width:650px;margin:0 auto 24px}
+    footer{border-top:1px solid var(--line);padding:30px 0 105px;color:#718099;font-size:11px}
+    .footerrow{display:flex;justify-content:space-between;gap:20px}.footerbrand{font-weight:950;color:#dbe5f5;font-size:15px}
+    .whatsapp{
+      position:fixed;right:19px;bottom:19px;z-index:100;display:flex;align-items:center;gap:9px;
+      background:#22db83;color:#03140b;padding:13px 17px;border-radius:999px;font-weight:950;
+      box-shadow:0 15px 38px rgba(34,219,131,.3);border:2px solid rgba(255,255,255,.12)
+    }
+    .waicon{width:25px;height:25px;border-radius:50%;background:#03140b;color:#22db83;display:grid;place-items:center;font-size:14px}
+    @media(max-width:980px){
+      .gridhero{grid-template-columns:1fr;text-align:center}.lead{margin:auto}.actions{justify-content:center}.hero-badges{justify-content:center}
+      .visual{min-height:400px}.cards{grid-template-columns:repeat(2,1fr)}.platforms{grid-template-columns:repeat(2,1fr)}
+      .feature{grid-template-columns:1fr}.featureart{min-height:360px}.device-strip{grid-template-columns:repeat(2,1fr)}.paygrid{grid-template-columns:repeat(3,1fr)}
+      .navlinks{display:none}
+    }
+    @media(max-width:600px){
+      .nav{height:64px}.brand{font-size:15px}.navcta{padding:10px 12px;font-size:11px}.hero{padding:55px 0 42px}
+      h1{font-size:47px}.lead{font-size:17px}.tv-shell{transform:none}.visual{min-height:310px}
+      .float1{right:-2px;top:0}.float2{left:-2px;bottom:3px}
+      .trustrow{grid-template-columns:repeat(2,1fr);gap:11px;padding:14px 0}
+      .cards,.steps,.platforms,.device-strip{grid-template-columns:1fr}.paygrid{grid-template-columns:repeat(2,1fr)}
+      section{padding:61px 0}.featurecopy{padding:31px 24px}.featureart{min-height:270px}.featurepoints{grid-template-columns:1fr 1fr}
+      .test{padding:42px 20px}.btn{width:100%}.actions{flex-direction:column}.whatsapp{right:11px;bottom:11px;left:11px;justify-content:center}
+      .footerrow{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="#inicio" aria-label="TV Streaming Uruguay">TV <span>STREAMING</span> URUGUAY</a>
+    <nav class="navlinks" aria-label="Navegación principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#como">Cómo funciona</a>
+      <a href="#pagos">Pagos</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="navcta" href="https://wa.me/59899074124?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20TV%20y%20Streaming." target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap gridhero">
+      <div>
+        <div class="eyebrow"><i class="dot"></i> SERVICIO PARA URUGUAY</div>
+        <h1>Tu entretenimiento.<br><em>Más simple.</em></h1>
+        <p class="lead">TV por Internet y opciones de streaming para disfrutar desde tus dispositivos compatibles. Consultá disponibilidad y <strong>probá sin compromiso</strong>.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://wa.me/59899074124?text=Hola%2C%20quiero%20probar%20gratis%20el%20servicio%20de%20TV%20y%20Streaming%20sin%20compromiso." target="_blank" rel="noopener">🔥 Probar gratis — sin compromiso</a>
+          <a class="btn secondary" href="#servicios">📺 Ver servicios</a>
+        </div>
+        <div class="micro">Consulta previa de disponibilidad. Atención personalizada por WhatsApp.</div>
+        <div class="hero-badges" aria-label="Características">
+          <span class="hero-badge">🇺🇾 Atención local</span>
+          <span class="hero-badge">📱 Multidispositivo</span>
+          <span class="hero-badge">💬 WhatsApp directo</span>
+        </div>
+      </div>
+
+      <div class="visual" aria-label="Experiencia de TV y streaming">
+        <div class="tv-shell">
+          <div class="tv-screen">
+            <svg viewBox="0 0 960 600" role="img" aria-label="Escena cinematográfica de entretenimiento en casa">
+              <defs>
+                <linearGradient id="bgHero" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#071321"/><stop offset=".48" stop-color="#171437"/><stop offset="1" stop-color="#060910"/>
+                </linearGradient>
+                <radialGradient id="glowHero" cx=".75" cy=".22" r=".55">
+                  <stop offset="0" stop-color="#8c78ff" stop-opacity=".85"/><stop offset="1" stop-color="#8c78ff" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="city" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#223860"/><stop offset="1" stop-color="#0a101b"/>
+                </linearGradient>
+                <linearGradient id="sofa" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#2a395b"/><stop offset="1" stop-color="#0f1729"/>
+                </linearGradient>
+              </defs>
+              <rect width="960" height="600" fill="url(#bgHero)"/>
+              <rect width="960" height="600" fill="url(#glowHero)"/>
+              <circle cx="748" cy="122" r="56" fill="#fff" opacity=".10"/>
+              <circle cx="748" cy="122" r="35" fill="#fff" opacity=".08"/>
+              <path d="M0 400 L120 330 240 390 360 300 500 365 640 280 760 360 880 300 960 345V600H0Z" fill="url(#city)" opacity=".78"/>
+              <g opacity=".35" fill="#8ec8ff">
+                <rect x="88" y="363" width="12" height="22"/><rect x="125" y="344" width="12" height="28"/><rect x="203" y="365" width="14" height="19"/>
+                <rect x="303" y="336" width="11" height="25"/><rect x="335" y="317" width="11" height="29"/><rect x="414" y="346" width="13" height="23"/>
+                <rect x="586" y="330" width="11" height="25"/><rect x="650" y="308" width="13" height="30"/><rect x="838" y="333" width="12" height="24"/>
+              </g>
+              <rect x="86" y="76" width="788" height="420" rx="34" fill="#05070c" stroke="#6475a0" stroke-opacity=".35" stroke-width="3"/>
+              <rect x="111" y="101" width="738" height="370" rx="22" fill="#0b1020"/>
+              <rect x="111" y="101" width="738" height="370" rx="22" fill="url(#glowHero)" opacity=".70"/>
+              <g fill="#fff" opacity=".95">
+                <circle cx="158" cy="141" r="5"/><circle cx="174" cy="141" r="5"/><circle cx="190" cy="141" r="5"/>
+              </g>
+              <text x="158" y="211" fill="#c8ddff" font-size="18" font-family="Arial, sans-serif" font-weight="700" letter-spacing="3">ENTRETENIMIENTO</text>
+              <text x="158" y="268" fill="#fff" font-size="52" font-family="Arial, sans-serif" font-weight="900">MIRÁ.</text>
+              <text x="158" y="326" fill="#a7c9ff" font-size="52" font-family="Arial, sans-serif" font-weight="900">DISFRUTÁ.</text>
+              <rect x="158" y="354" width="176" height="11" rx="6" fill="#22db83"/>
+              <rect x="348" y="354" width="84" height="11" rx="6" fill="#6684bd" opacity=".45"/>
+              <rect x="447" y="354" width="120" height="11" rx="6" fill="#6684bd" opacity=".28"/>
+              <circle cx="692" cy="278" r="86" fill="#0f1730" stroke="#7d68ff" stroke-opacity=".4" stroke-width="4"/>
+              <polygon points="672,246 672,310 724,278" fill="#fff"/>
+              <path d="M430 500 H530 L515 528 H445 Z" fill="#0b0e17"/>
+              <rect x="382" y="528" width="196" height="13" rx="6" fill="#2a3348"/>
+            </svg>
+            <div class="scanline"></div>
+            <div class="play" aria-hidden="true"></div>
+            <div class="screenlabel">ENTRETENIMIENTO DIGITAL · URUGUAY</div>
+          </div>
+        </div>
+        <div class="floatcard float1"><b>⚡ Atención directa</b><small>Por WhatsApp</small></div>
+        <div class="floatcard float2"><b>✓ Sin compromiso</b><small>Consultá antes de contratar</small></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="wrap trustrow">
+      <div class="trustitem"><strong>🇺🇾 Uruguay</strong>Atención local</div>
+      <div class="trustitem"><strong>💬 WhatsApp</strong>Contacto directo</div>
+      <div class="trustitem"><strong>📱 Multidispositivo</strong>Consultá compatibilidad</div>
+      <div class="trustitem"><strong>🎁 Prueba</strong>Cuando esté disponible</div>
+    </div>
+  </div>
+
+  <section id="servicios">
+    <div class="wrap">
+      <div class="sectionhead">
+        <div class="kicker">Lo que ofrecemos</div>
+        <h2>Elegí cómo querés entretenerte</h2>
+        <p>Consultá las alternativas disponibles y encontrá la opción que se adapte a vos.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="cardart">
+            <svg viewBox="0 0 520 250" aria-hidden="true">
+              <defs><linearGradient id="c1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b2742"/><stop offset=".55" stop-color="#2b2f7a"/><stop offset="1" stop-color="#0a0d1a"/></linearGradient></defs>
+              <rect width="520" height="250" fill="url(#c1)"/><circle cx="390" cy="60" r="90" fill="#7bd0ff" opacity=".12"/><rect x="78" y="42" width="365" height="145" rx="16" fill="#05070d" stroke="#7ebcff" stroke-opacity=".35" stroke-width="3"/><rect x="95" y="58" width="331" height="111" rx="10" fill="#152c48"/><path d="M112 144 C170 87 245 143 304 92 S388 115 410 83" fill="none" stroke="#7fd0ff" stroke-width="8" stroke-linecap="round"/><rect x="225" y="190" width="72" height="8" rx="4" fill="#6c7c99"/><text x="30" y="223" fill="#d7eaff" font-size="16" font-family="Arial" font-weight="800">TV POR INTERNET</text>
+            </svg>
+          </div>
+          <div class="cardbody"><div class="icon">📺</div><h3>TV por Internet</h3><p>Una alternativa de televisión digital para tus dispositivos compatibles.</p><a href="https://wa.me/59899074124?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20TV%20por%20Internet." target="_blank" rel="noopener">Consultar →</a></div>
+        </article>
+
+        <article class="card">
+          <div class="cardart">
+            <svg viewBox="0 0 520 250" aria-hidden="true">
+              <defs><linearGradient id="c2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#291245"/><stop offset=".5" stop-color="#74265d"/><stop offset="1" stop-color="#100b19"/></linearGradient></defs>
+              <rect width="520" height="250" fill="url(#c2)"/><circle cx="90" cy="70" r="62" fill="#ff75bd" opacity=".10"/><circle cx="428" cy="173" r="88" fill="#ad8dff" opacity=".10"/><rect x="55" y="49" width="132" height="166" rx="14" fill="#121525" stroke="#ff95cf" stroke-opacity=".35"/><rect x="204" y="31" width="261" height="184" rx="18" fill="#090b12" stroke="#cfb8ff" stroke-opacity=".35"/><circle cx="334" cy="122" r="54" fill="#2c224a"/><polygon points="320,93 320,151 365,122" fill="#fff"/><text x="68" y="229" fill="#f7ddff" font-size="16" font-family="Arial" font-weight="800">STREAMING</text>
+            </svg>
+          </div>
+          <div class="cardbody"><div class="icon">🎬</div><h3>Streaming</h3><p>Opciones de entretenimiento digital para disfrutar series, películas y contenidos.</p><a href="https://wa.me/59899074124?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Streaming." target="_blank" rel="noopener">Consultar →</a></div>
+        </article>
+
+        <article class="card">
+          <div class="cardart">
+            <svg viewBox="0 0 520 250" aria-hidden="true">
+              <defs><linearGradient id="c3" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#082b32"/><stop offset=".52" stop-color="#164c71"/><stop offset="1" stop-color="#090f18"/></linearGradient></defs>
+              <rect width="520" height="250" fill="url(#c3)"/><path d="M30 188 C110 120 150 219 225 145 S342 112 492 184" fill="none" stroke="#49d5ff" stroke-width="28" stroke-linecap="round" opacity=".16"/><path d="M30 188 C110 120 150 219 225 145 S342 112 492 184" fill="none" stroke="#64d9ff" stroke-width="5" stroke-linecap="round"/><circle cx="138" cy="96" r="20" fill="#fff" opacity=".9"/><circle cx="201" cy="72" r="10" fill="#8fe4ff" opacity=".75"/><circle cx="342" cy="71" r="16" fill="#b1a3ff" opacity=".8"/><text x="30" y="225" fill="#dbf6ff" font-size="16" font-family="Arial" font-weight="800">FLUJO TV</text>
+            </svg>
+          </div>
+          <div class="cardbody"><div class="icon">⚡</div><h3>Flujo TV</h3><p>Consultá disponibilidad, condiciones y dispositivos compatibles.</p><a href="https://wa.me/59899074124?text=Hola%2C%20quiero%20consultar%20por%20Flujo%20TV." target="_blank" rel="noopener">Consultar →</a></div>
+        </article>
+
+        <article class="card">
+          <div class="cardart">
+            <svg viewBox="0 0 520 250" aria-hidden="true">
+              <defs><linearGradient id="c4" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0a2440"/><stop offset=".46" stop-color="#164f49"/><stop offset="1" stop-color="#0a0e15"/></linearGradient></defs>
+              <rect width="520" height="250" fill="url(#c4)"/><path d="M0 175 Q110 113 210 165 T520 150 V250 H0Z" fill="#1ca5a5" opacity=".18"/><path d="M0 183 Q110 120 210 173 T520 158" fill="none" stroke="#65e7d4" stroke-width="5" opacity=".82"/><circle cx="402" cy="70" r="47" fill="#a0fff0" opacity=".11"/><text x="30" y="225" fill="#ddfffb" font-size="16" font-family="Arial" font-weight="800">OLEADA TV</text>
+            </svg>
+          </div>
+          <div class="cardbody"><div class="icon">🌊</div><h3>Oleada TV</h3><p>Otra alternativa disponible según cobertura y condiciones del servicio.</p><a href="https://wa.me/59899074124?text=Hola%2C%20quiero%20consultar%20por%20Oleada%20TV." target="_blank" rel="noopener">Consultar →</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencia" style="padding-top:20px">
+    <div class="wrap">
+      <div class="sectionhead">
+        <div class="kicker">Una experiencia más visual</div>
+        <h2>Del celular al living</h2>
+        <p>La experiencia depende del servicio y del dispositivo. Consultá compatibilidad antes de contratar.</p>
+      </div>
+
+      <div class="feature">
+        <div class="featureart">
+          <svg viewBox="0 0 900 560" role="img" aria-label="Sala de estar moderna con pantalla y dispositivos">
+            <defs>
+              <linearGradient id="room" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0a111d"/><stop offset=".55" stop-color="#1c1733"/><stop offset="1" stop-color="#070a11"/></linearGradient>
+              <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#1f2a44"/><stop offset="1" stop-color="#0e1524"/></linearGradient>
+              <linearGradient id="light" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#89cfff" stop-opacity=".30"/><stop offset="1" stop-color="#9877ff" stop-opacity=".02"/></linearGradient>
+            </defs>
+            <rect width="900" height="560" fill="url(#room)"/>
+            <rect x="0" y="0" width="900" height="390" fill="url(#wall)"/>
+            <circle cx="752" cy="88" r="96" fill="#7aa8ff" opacity=".10"/>
+            <rect x="100" y="72" width="510" height="280" rx="22" fill="#06090f" stroke="#6d7da6" stroke-opacity=".35" stroke-width="4"/>
+            <rect x="122" y="94" width="466" height="236" rx="14" fill="#111d37"/>
+            <rect x="122" y="94" width="466" height="236" rx="14" fill="url(#light)"/>
+            <text x="156" y="169" fill="#b7d7ff" font-size="18" font-family="Arial" font-weight="800" letter-spacing="3">TU PANTALLA</text>
+            <text x="156" y="230" fill="#fff" font-size="42" font-family="Arial" font-weight="900">LISTO PARA MIRAR</text>
+            <rect x="156" y="255" width="138" height="9" rx="4.5" fill="#22db83"/>
+            <circle cx="515" cy="220" r="45" fill="#2a2150"/><polygon points="500,195 500,245 539,220" fill="#fff"/>
+            <rect x="310" y="340" width="90" height="12" rx="6" fill="#56637d"/><rect x="260" y="354" width="190" height="12" rx="6" fill="#26324b"/>
+            <rect x="0" y="388" width="900" height="172" fill="#0a0f17"/>
+            <rect x="75" y="426" width="365" height="84" rx="28" fill="#273452"/><rect x="102" y="447" width="92" height="18" rx="9" fill="#344363"/><rect x="215" y="447" width="92" height="18" rx="9" fill="#344363"/>
+            <rect x="490" y="437" width="62" height="96" rx="16" fill="#090d15" stroke="#8ebcf4" stroke-opacity=".34" stroke-width="3"/><rect x="502" y="450" width="38" height="61" rx="7" fill="#17233b"/>
+            <rect x="650" y="439" width="156" height="88" rx="13" fill="#070a10" stroke="#a09cff" stroke-opacity=".28" stroke-width="3"/><rect x="665" y="451" width="126" height="57" rx="8" fill="#18203a"/>
+            <circle cx="746" cy="478" r="17" fill="#403271"/><polygon points="741,466 741,490 759,478" fill="#fff"/>
+          </svg>
+        </div>
+        <div class="featurecopy">
+          <div class="kicker">Hecho para mirar</div>
+          <h3>Una misma idea. Más pantallas.</h3>
+          <p>Consultá qué opción se adapta mejor a tu forma de mirar. Podemos orientarte según el servicio disponible y el equipo que ya tenés en casa.</p>
+          <div class="featurepoints">
+            <div class="fp"><b>📺 Smart TV</b>Según servicio y modelo</div>
+            <div class="fp"><b>📱 Celular</b>Android / iPhone según compatibilidad</div>
+            <div class="fp"><b>💻 Computadora</b>Opciones según el servicio</div>
+            <div class="fp"><b>📦 TV Box</b>Consultá compatibilidad</div>
+          </div>
+          <a class="btn primary" href="https://wa.me/59899074124?text=Hola%2C%20quiero%20consultar%20qu%C3%A9%20servicio%20es%20compatible%20con%20mi%20dispositivo." target="_blank" rel="noopener">📲 Consultar compatibilidad</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sectionhead">
+        <div class="kicker">Entretenimiento</div>
+        <h2>Plataformas que podés consultar</h2>
+        <p>La disponibilidad y modalidad dependen de las condiciones de cada servicio.</p>
+      </div>
+      <div class="platforms">
+        <div class="platform"><div class="platformmark">N</div><b>Netflix</b><span>disponibilidad</span></div>
+        <div class="platform"><div class="platformmark">✦</div><b>Disney+</b><span>disponibilidad</span></div>
+        <div class="platform"><div class="platformmark">M</div><b>Max</b><span>disponibilidad</span></div>
+        <div class="platform"><div class="platformmark">＋</div><b>Otras opciones</b><span>consultá</span></div>
+      </div>
+      <p class="disclaimer">Las marcas y nombres comerciales pertenecen a sus respectivos propietarios. Este sitio no implica afiliación, patrocinio ni representación oficial de dichas marcas salvo indicación expresa.</p>
+    </div>
+  </section>
+
+  <section id="como">
+    <div class="wrap">
+      <div class="sectionhead">
+        <div class="kicker">En 3 pasos</div>
+        <h2>Empezá sin vueltas</h2>
+        <p>Te acompañamos durante el proceso.</p>
+      </div>
+      <div class="steps">
+        <article class="step"><div class="num">PASO 01</div><h3>💬 Consultá</h3><p>Escribinos por WhatsApp y contanos qué servicio estás buscando.</p></article>
+        <article class="step"><div class="num">PASO 02</div><h3>🔎 Verificá</h3><p>Te informamos disponibilidad, condiciones, dispositivos compatibles y opciones.</p></article>
+        <article class="step"><div class="num">PASO 03</div><h3>▶ Disfrutá</h3><p>Si corresponde una prueba, la realizás antes de decidir si querés contratar.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="test">
+        <div class="kicker">Tu próximo paso</div>
+        <h2>¿Querés probar antes de decidir?</h2>
+        <p>Consultá por WhatsApp la disponibilidad de una prueba gratuita sin compromiso.</p>
+        <a class="btn primary" href="https://wa.me/59899074124?text=Hola%2C%20quiero%20probar%20gratis%20el%20servicio%20de%20TV%20y%20Streaming%20sin%20compromiso." target="_blank" rel="noopener">🔥 Quiero mi prueba gratis</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sectionhead">
+        <div class="kicker">Dispositivos</div>
+        <h2>Miralo donde tenga sentido para vos</h2>
+        <p>La compatibilidad depende de cada servicio. Te ayudamos a verificarla.</p>
+      </div>
+      <div class="device-strip">
+        <div class="device">
+          <svg viewBox="0 0 180 95" aria-hidden="true"><rect x="36" y="12" width="108" height="63" rx="8" fill="#05070c" stroke="#7890b7"/><rect x="44" y="20" width="92" height="47" rx="5" fill="#17253d"/><rect x="84" y="77" width="13" height="6" rx="3" fill="#7c8aa2"/><rect x="67" y="83" width="47" height="5" rx="2.5" fill="#27344a"/></svg>
+          <b>Smart TV</b><small>consultá modelo</small>
+        </div>
+        <div class="device">
+          <svg viewBox="0 0 180 95" aria-hidden="true"><rect x="67" y="6" width="46" height="83" rx="9" fill="#05070c" stroke="#7890b7"/><rect x="73" y="15" width="34" height="63" rx="5" fill="#182843"/><circle cx="90" cy="83" r="2.5" fill="#8393b0"/></svg>
+          <b>Celular</b><small>Android / iPhone</small>
+        </div>
+        <div class="device">
+          <svg viewBox="0 0 180 95" aria-hidden="true"><rect x="27" y="15" width="126" height="57" rx="7" fill="#05070c" stroke="#7890b7"/><rect x="35" y="23" width="110" height="41" rx="4" fill="#192743"/><path d="M54 77 H126 L133 84 H47Z" fill="#63728c"/></svg>
+          <b>Notebook / PC</b><small>según servicio</small>
+        </div>
+        <div class="device">
+          <svg viewBox="0 0 180 95" aria-hidden="true"><rect x="31" y="25" width="118" height="44" rx="8" fill="#05070c" stroke="#7890b7"/><rect x="40" y="33" width="100" height="28" rx="5" fill="#1a2a44"/><rect x="62" y="72" width="56" height="7" rx="3.5" fill="#2c3c56"/></svg>
+          <b>TV Box</b><small>consultá compatibilidad</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pagos">
+    <div class="wrap">
+      <div class="sectionhead">
+        <div class="kicker">🇺🇾 Pagos</div>
+        <h2>Medios de pago</h2>
+        <p>Consultá por WhatsApp los datos y las instrucciones correspondientes a tu compra.</p>
+      </div>
+      <div class="paygrid">
+        <div class="pay">🏦<br>BROU<small>Consultar</small></div>
+        <div class="pay">💳<br>Mercado Pago<small>Consultar</small></div>
+        <div class="pay">🟢<br>Abitab<small>Consultar</small></div>
+        <div class="pay">🔵<br>Redpagos<small>Consultar</small></div>
+        <div class="pay">💰<br>MiDinero<small>Consultar</small></div>
+      </div>
+      <div style="text-align:center;margin-top:25px">
+        <a class="btn secondary" href="https://wa.me/59899074124?text=Hola%2C%20quiero%20consultar%20los%20medios%20de%20pago." target="_blank" rel="noopener">💳 Consultar cómo pagar</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sectionhead"><div class="kicker">Ayuda</div><h2>Preguntas frecuentes</h2></div>
+      <div class="faq">
+        <details><summary>¿Puedo probar antes de contratar?</summary><p>Consultá por WhatsApp la disponibilidad de una prueba gratuita y las condiciones vigentes.</p></details>
+        <details><summary>¿En qué dispositivos funciona?</summary><p>Puede variar según el servicio. Consultá compatibilidad para Smart TV, celular, tablet, computadora, TV Box u otros dispositivos.</p></details>
+        <details><summary>¿Cómo realizo el pago?</summary><p>Podés consultar por BROU, Mercado Pago, Abitab, Redpagos y MiDinero. Te indicaremos el procedimiento correspondiente.</p></details>
+        <details><summary>¿Puedo usarlo en Smart TV?</summary><p>Depende del servicio y del modelo de Smart TV. Antes de contratar, consultanos para verificar compatibilidad.</p></details>
+        <details><summary>¿Necesito instalar algo?</summary><p>Depende del servicio y del dispositivo. Te orientamos por WhatsApp paso a paso.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap final">
+    <div class="finalbox">
+      <div class="kicker">Estamos a un mensaje</div>
+      <h2>Tu entretenimiento empieza acá.</h2>
+      <p>Contanos qué estás buscando y te ayudamos a encontrar la opción disponible para vos.</p>
+      <a class="btn primary" href="https://wa.me/59899074124?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20TV%20por%20Internet%20y%20Streaming." target="_blank" rel="noopener">💬 Hablar por WhatsApp</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap footerrow">
+    <div>
+      <div class="footerbrand">TV STREAMING URUGUAY</div>
+      <div style="margin-top:6px">Entretenimiento digital · WhatsApp +598 99 074 124</div>
+    </div>
+    <div>© 2026 · Todos los derechos reservados.</div>
+  </div>
+  <div class="wrap" style="margin-top:20px;max-width:900px">Las marcas de terceros pertenecen a sus respectivos propietarios. La disponibilidad de servicios, contenidos, dispositivos, pruebas y medios de pago está sujeta a las condiciones vigentes.</div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/59899074124?text=Hola%2C%20quiero%20probar%20gratis%20el%20servicio%20de%20TV%20y%20Streaming%20sin%20compromiso." target="_blank" rel="noopener" aria-label="Probar gratis por WhatsApp"><span class="waicon">✓</span> PROBAR GRATIS</a>
+
+</body>
+</html>
